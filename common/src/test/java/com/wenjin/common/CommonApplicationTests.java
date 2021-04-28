@@ -1,13 +1,13 @@
-package com.example.netty;
+package com.wenjin.common;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class CommonApplicationTests {
 
     @Test
-	void contextLoads() {
-	}
+    void contextLoads() {
+    }
 
 }

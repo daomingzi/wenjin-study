@@ -1,13 +1,13 @@
-package com.example;
+package com.wenjin.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class CommonApplication {
 
     public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+        SpringApplication.run(CommonApplication.class, args);
+    }
 
 }
