@@ -10,7 +10,7 @@ import java.util.Random;
 public class MergerSort {
 
     @Test
-    public void test() {
+    public void testMergerSort() {
         Random random = new Random();
 
 //        int[] data = {5, 7, 4, 3, 6, 8, 2, 1, 9};
@@ -22,14 +22,12 @@ public class MergerSort {
         int[] temp = new int[data.length];
         long start = System.currentTimeMillis();
         mergeSort(data, 0, data.length - 1, temp);
-        long end= System.currentTimeMillis();
+        long end = System.currentTimeMillis();
         System.out.println("耗时: " + (end - start));
 
 //        System.out.println(Arrays.toString(data));
 
     }
-
-
 
 
     /**
