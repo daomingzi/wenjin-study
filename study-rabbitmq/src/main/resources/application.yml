@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+# rabbitmq
+spring:
+  rabbitmq:
+    host: 10.28.151.204
+    port: 5672
+    username: tpbb
+    password: tpbb
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 1
+        max-concurrency: 3

@@ -14,7 +14,7 @@
     </organization>
 
     <properties>
-        <spring-boot.version>2.4.3</spring-boot.version>
+        <spring-boot.version>2.6.7</spring-boot.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.version>3.8.1</maven.compiler.version>
