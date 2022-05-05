@@ -4,6 +4,7 @@ import com.wenjin.studyneo4j.entity.relationship.RelTitleParagraph;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -20,9 +21,10 @@ import java.util.List;
  * @date 2022/4/28
  */
 
-@Node("article_title")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Node("article_title")
 public class ArticleTitle {
     /**
      * 实体类id
@@ -51,19 +53,6 @@ public class ArticleTitle {
      */
     @Property("update_time")
     private String updateTime;
-
-
-//    @Relationship(type = "rel_title_paragraph", direction = Relationship.Direction.OUTGOING)
-//    private List<ArticleParagraph> paragraphs;
-
-
-    public ArticleTitle(String entityId, String entityName, String titleContent, String creatTime, String updateTime) {
-        this.entityId = entityId;
-        this.entityName = entityName;
-        this.titleContent = titleContent;
-        this.creatTime = creatTime;
-        this.updateTime = updateTime;
-    }
 
     @Relationship(type = "rel_title_paragraph", direction = Relationship.Direction.OUTGOING)
     private List<RelTitleParagraph> relTitleParagraphs;

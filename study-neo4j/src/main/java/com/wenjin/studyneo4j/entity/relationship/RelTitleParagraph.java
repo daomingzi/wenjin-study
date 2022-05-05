@@ -13,6 +13,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 
 /**
+ * 文章和段落的链接
  * @author huangwj.
  * @date 2022/4/28
  */
@@ -24,8 +25,6 @@ public class RelTitleParagraph {
     @GeneratedValue
     private Long id;
 
-    @TargetNode
-    private ArticleParagraph articleParagraph;
     /**
      * 关系主键
      */
@@ -57,12 +56,7 @@ public class RelTitleParagraph {
     @Property("tag")
     private String tag;
 
-    public RelTitleParagraph(String relId, String relTypeName, Integer paragraphIndex, String createTime, String updateTime, String tag) {
-        this.relId = relId;
-        this.relTypeName = relTypeName;
-        this.paragraphIndex = paragraphIndex;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.tag = tag;
-    }
+    @TargetNode
+    private ArticleParagraph articleParagraph;
+
 }

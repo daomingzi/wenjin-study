@@ -1,29 +1,26 @@
 package com.wenjin.studyneo4j.entity.node;
 
-import lombok.AllArgsConstructor;
+import com.wenjin.studyneo4j.entity.relationship.RelKeyParagraph;
 import lombok.Data;
-import org.neo4j.cypherdsl.core.Neo4jVersion;
-import org.springframework.data.neo4j.core.schema.GeneratedValue;
-import org.springframework.data.neo4j.core.schema.Id;
-import org.springframework.data.neo4j.core.schema.Node;
-import org.springframework.data.neo4j.core.schema.Property;
+import org.springframework.data.neo4j.core.schema.*;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
+
+import java.util.List;
 
 /**
  * @author huangwj.
  * @date 2022/4/28
  */
 
-@Node("article_paragraph")
 @Data
-@AllArgsConstructor
+@Node("article_paragraph")
 public class ArticleParagraph {
-
     /**
      * 段落主键
      */
     @Id
     @GeneratedValue(UUIDStringGenerator.class)
+    @Property("entity_id")
     private String entityId;
     /**
      * 节点名称
@@ -53,7 +50,11 @@ public class ArticleParagraph {
     /**
      * 标签
      */
-//    @Property("tag")
-//    private String tag;
+    @Property("tag")
+    private String tag;
+
+    @Relationship(type = "rel_title_paragraph", direction = Relationship.Direction.INCOMING)
+    private List<RelKeyParagraph> relKeyParagraphs;
+
 
 }

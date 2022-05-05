@@ -48,6 +48,8 @@
         <module>study-algorithm</module>
         <module>study-concurrent</module>
         <module>study-netty</module>
+        <module>study-rabbitmq</module>
+        <module>study-neo4j</module>
     </modules>
 
     <dependencyManagement>
@@ -108,26 +110,13 @@
                 </configuration>
             </plugin>
             <!--打包关联最新 git commit 信息插件-->
-            <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
-                <version>${git.commit.version}</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>pl.project13.maven</groupId>-->
+<!--                <artifactId>git-commit-id-plugin</artifactId>-->
+<!--                <version>${git.commit.version}</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>aliyun-plugin</id>
-            <url>https://maven.aliyun.com/repository/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
     <repositories>
         <!--阿里云代理-->

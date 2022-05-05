@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>group.springframework</groupId>
+        <artifactId>spring-cloud-dependencies-parent</artifactId>
+        <version>2021.0.1</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.pig4cloud</groupId>
+    <artifactId>study-common-bom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <description>pigx 公共版本控制</description>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <fastjson.version>1.2.75</fastjson.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+
+
+
+</project>

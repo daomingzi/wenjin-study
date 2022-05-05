@@ -2,7 +2,10 @@ spring:
   neo4j:
     authentication:
       username: neo4j
-      password: wenjin-study
+      # 公司电脑密码
+#      password: wenjin-study
+      # 笔记本密码
+      password: wenjin_study
     uri: bolt://localhost:7687
 #spring:
 #  neo4j:
