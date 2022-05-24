@@ -53,6 +53,11 @@ public class ArticleTitle {
      */
     @Property("update_time")
     private String updateTime;
+    /**
+     * 来源
+     */
+    @Property("source")
+    private String source;
 
     @Relationship(type = "rel_title_paragraph", direction = Relationship.Direction.OUTGOING)
     private List<RelTitleParagraph> relTitleParagraphs;

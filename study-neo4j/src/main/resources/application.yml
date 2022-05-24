@@ -1,16 +1,37 @@
+#spring:
+#  neo4j:
+#    authentication:
+#      username: neo4j
+#      # 公司电脑密码
+#      password: wenjin-study
+#      # 笔记本密码
+##      password: wenjin_study
+#    uri: bolt://localhost:7687
+
+# sit环境
+#spring:
+#  neo4j:
+#
+#    authentication:
+#      username: neo4j
+#      password: sunline
+#    uri: bolt://10.22.1.110:7687
+
 spring:
   neo4j:
+
     authentication:
       username: neo4j
-      # 公司电脑密码
-#      password: wenjin-study
-      # 笔记本密码
-      password: wenjin_study
-    uri: bolt://localhost:7687
+      password: sunline
+    uri: bolt://172.18.0.51
+
+
 #spring:
 #  neo4j:
 #    authentication:
 #      username: neo4j
 #      password: sunline
 #    uri: bolt://10.22.1.110:7687
+
+
 

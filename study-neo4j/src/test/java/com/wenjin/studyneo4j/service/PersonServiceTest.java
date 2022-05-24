@@ -1,23 +1,24 @@
 package com.wenjin.studyneo4j.service;
-import com.wenjin.studyneo4j.entity.node.KeywordsEntity;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wenjin.studyneo4j.entity.node.ArticleParagraph;
 import com.wenjin.studyneo4j.entity.node.ArticleTitle;
+import com.wenjin.studyneo4j.entity.node.KeywordsEntity;
 import com.wenjin.studyneo4j.entity.relationship.RelKeyParagraph;
 import com.wenjin.studyneo4j.entity.relationship.RelTitleParagraph;
 import com.wenjin.studyneo4j.repository.ArticleRepository;
+import com.wenjin.studyneo4j.repository.KeywordsRepository;
 import com.wenjin.studyneo4j.repository.ParagraphRepository;
 import org.assertj.core.util.Lists;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.AfterEach;
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.neo4j.driver.internal.SessionFactoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.annotation.Version;
-import org.springframework.data.neo4j.core.Neo4jClient;
+//import org.springframework.data.neo4j.core.Neo4jClient;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,20 +38,16 @@ class PersonServiceTest {
     @Autowired
     private ParagraphRepository paragraphRepository;
 
-
     @Autowired
-    private Neo4jClient neo4jClient;
+    private KeywordsRepository keywordsRepository;
+
+
+//    @Autowired
+//    private Neo4jClient neo4jClient;
 
 
 
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
 
     private List<RelKeyParagraph> createRel(int num) {
         List<RelKeyParagraph> relKeyParagraphs = new ArrayList<>();
@@ -95,7 +92,7 @@ class PersonServiceTest {
         return relKeyParagraphs;
     }
 
-    @Test
+//    @Test
 //    @Transactional("neo4jTransactionManager")
     public void create() {
 
@@ -103,24 +100,24 @@ class PersonServiceTest {
         List<ArticleTitle> articleTitles = new ArrayList<>();
 
         ArticleParagraph paragraph1 = new ArticleParagraph();
-//        paragraph1.setEntityId("66483225-1f89-4919-b8bb-3ea0f87de0da");
-        paragraph1.setEntityName("文章段落_修改");
+        paragraph1.setEntityId("7c6074b7-6d74-49e3-accb-b651221a8e47");
+        paragraph1.setEntityName("文章段落_修改333");
         paragraph1.setParagraphContent("时间从2020年的初春一路蹒跚到繁花似锦、绿树蓊郁的仲夏，清风吹过，我听见回 响一来自山谷和心间。在那动人的回响中，青春的呐喊犹如雏凤的啼鸣一清脆而悦 耳；在那美丽的土地上，一张张青春的面孔犹如盛开的夏花一明艳而璀璨。");
         paragraph1.setCreatTime("2022-04-30 00:00:00");
         paragraph1.setUpdateTime("2022-04-30 00:00:00");
         paragraph1.setUpdateUser("admin");
         paragraph1.setTag("高考满分作文");
-        paragraph1.setRelKeyParagraphs(createRel(1));
+//        paragraph1.setRelKeyParagraphs(createRel(1));
 
         ArticleParagraph paragraph2 = new ArticleParagraph();
-//        paragraph2.setEntityId("66e5108f-ae62-449c-8394-f8cb7ca8ab82");
-        paragraph2.setEntityName("文章段落_修改");
+        paragraph2.setEntityId("f28e3201-5569-4d4a-ae38-bea3e9d76354");
+        paragraph2.setEntityName("文章段落_修改333");
         paragraph2.setParagraphContent("那些青春的面孔啊，“承受着心跳的负荷和呼吸的累赘却乐此不疲”，那是2020年的 “中国面孔”。");
         paragraph2.setCreatTime("2022-04-30 00:00:00");
         paragraph2.setUpdateTime("2022-04-30 00:00:00");
         paragraph2.setUpdateUser("admin");
         paragraph2.setTag("高考满分作文");
-        paragraph2.setRelKeyParagraphs(createRel(2));
+//        paragraph2.setRelKeyParagraphs(createRel(2));
 
         ArticleParagraph paragraph3 = new ArticleParagraph();
 //        paragraph3.setEntityId("b072f775-9212-4acb-b8eb-15554bd60a5d");
@@ -132,7 +129,7 @@ class PersonServiceTest {
         paragraph3.setUpdateTime("2022-04-30 00:00:00");
         paragraph3.setUpdateUser("admin");
         paragraph3.setTag("高考满分作文");
-        paragraph3.setRelKeyParagraphs(createRel(3));
+//        paragraph3.setRelKeyParagraphs(createRel(3));
 
         ArticleParagraph paragraph4 = new ArticleParagraph();
 //        paragraph4.setEntityId("41d129c2-4ea1-4870-945e-252a372720ce");
@@ -142,7 +139,7 @@ class PersonServiceTest {
         paragraph4.setUpdateTime("2022-04-30 00:00:00");
         paragraph4.setUpdateUser("admin");
         paragraph4.setTag("高考满分作文");
-        paragraph4.setRelKeyParagraphs(createRel(4));
+//        paragraph4.setRelKeyParagraphs(createRel(4));
 
 
         ArrayList<ArticleParagraph> paragraphs = Lists.newArrayList();
@@ -152,7 +149,7 @@ class PersonServiceTest {
         paragraphs.add(paragraph4);
 
         RelTitleParagraph rel1 = new RelTitleParagraph();
-        rel1.setId(null);
+//        rel1.setId(1701L);
         rel1.setRelId("uuid1111");
         rel1.setRelTypeName("文章和段落的关系");
         rel1.setParagraphIndex(1);
@@ -162,7 +159,7 @@ class PersonServiceTest {
         rel1.setArticleParagraph(paragraph1);
 
         RelTitleParagraph rel2 = new RelTitleParagraph();
-        rel2.setId(null);
+//        rel2.setId(1704L);
         rel2.setRelId("uuid1111");
         rel2.setRelTypeName("文章和段落的关系");
         rel2.setParagraphIndex(2);
@@ -199,7 +196,7 @@ class PersonServiceTest {
 
 
         ArticleTitle articleTitle = new ArticleTitle();
-//        articleTitle.setEntityId("4322011a-26bc-4eec-9508-3bd2b3dffaa9");
+//        articleTitle.setEntityId("f0dc798e-791a-4d5f-9d39-1d0f939b473b");
         articleTitle.setEntityName("文章标题");
         articleTitle.setTitleContent("内容修改_塑中国面孔，铸美丽华夏");
         articleTitle.setCreatTime("2022-04-30 00:00:00");
@@ -210,7 +207,7 @@ class PersonServiceTest {
         long start = System.currentTimeMillis();
         ArticleTitle save = articleRepository.save(articleTitle);
         long end = System.currentTimeMillis();
-        int i=1/0;
+//        int i=1/0;
 
         System.out.println("--------创建耗时: " + (end - start) + "秒");
         System.out.println(JSONObject.toJSON(save));
@@ -219,7 +216,7 @@ class PersonServiceTest {
     }
 
 
-    @Test
+//    @Test
     @Version
     public void createParagraph() {
 
@@ -231,7 +228,7 @@ class PersonServiceTest {
         paragraph1.setUpdateTime("2022-04-30 00:00:00");
         paragraph1.setUpdateUser("admin_单独");
         paragraph1.setTag("高考满分作文_单独");
-        paragraph1.setRelKeyParagraphs(createRel(999));
+//        paragraph1.setRelKeyParagraphs(createRel(999));
 
         long start = System.currentTimeMillis();
         ArticleParagraph save = paragraphRepository.save(paragraph1);
@@ -242,11 +239,11 @@ class PersonServiceTest {
 
     }
 
-    @Test
+//    @Test
     public void query(){
 
         // 查询节点
-        Optional<ArticleTitle> byId = articleRepository.findById("9945176e-447a-430b-8b7b-e53a3c7372c7");
+        Optional<ArticleTitle> byId = articleRepository.findById("965b8b1c-f5e0-4127-b9cc-e19f29a42f76");
         System.out.println(JSONObject.toJSON(byId));
 //
 //        ArticleTitle articleTitle = articleRepository.queryArticle();
@@ -255,5 +252,21 @@ class PersonServiceTest {
 //        Optional<ArticleTitle> byId = articleRepository.findById("967");
 //        System.out.println(byId);
 //                personService.create();
+    }
+
+//    @Test
+    public void delete(){
+//        articleRepository.deleteAll(Lists.newArrayList("7c6074b7-6d74-49e3-accb-b651221a8e47"));
+//        paragraphRepository.deleteAllById(Lists.newArrayList("7c6074b7-6d74-49e3-accb-b651221a8e47"));
+
+    }
+
+//    @Test
+    public void queryKeywords(){
+        Optional<KeywordsEntity> byId = keywordsRepository.findById("1433910d-8d9a-402c-9698-0feab311b6a7");
+//        KeywordsEntity param = new KeywordsEntity();
+//        param.setEntityId("7c6074b7-6d74-49e3-accb-b651221a8e47");
+//        List<KeywordsEntity> all = keywordsRepository.findAll(Example.of(param, ExampleMatcher.matchingAny()));
+        System.out.println(JSONObject.toJSON(byId));
     }
 }
