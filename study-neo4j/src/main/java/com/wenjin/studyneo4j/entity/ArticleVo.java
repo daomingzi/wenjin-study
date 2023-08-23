@@ -1,10 +1,10 @@
-package com.wenjin.studyneo4j.entity.node;
+package com.wenjin.studyneo4j.entity;
 
+import com.wenjin.studyneo4j.entity.node.ArticleParagraph;
 import com.wenjin.studyneo4j.entity.relationship.RelKeyParagraph;
 import lombok.Data;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
-import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Property;
 import org.springframework.data.neo4j.core.schema.Relationship;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
@@ -13,29 +13,27 @@ import java.util.List;
 
 /**
  * @author huangwj.
- * @date 2022/4/28
+ * @date 2022/5/24
  */
-
 @Data
-@Node("article_paragraph")
-public class ArticleParagraph {
+public class ArticleVo {
     /**
-     * 段落主键
+     * 实体类id
      */
     @Id
     @GeneratedValue(UUIDStringGenerator.class)
     @Property("entity_id")
     private String entityId;
     /**
-     * 节点名称
+     * 实体类名称
      */
     @Property("entity_name")
     private String entityName;
     /**
-     * 段落内容
+     * 标题内容
      */
-    @Property("paragraph_content")
-    private String paragraphContent;
+    @Property("title_content")
+    private String titleContent;
     /**
      * 创建时间
      */
@@ -47,18 +45,12 @@ public class ArticleParagraph {
     @Property("update_time")
     private String updateTime;
     /**
-     * 更新人
+     * 来源
      */
-    @Property("update_user")
-    private String updateUser;
-    /**
-     * 标签
-     */
-    @Property("tag")
-    private String tag;
+    @Property("source")
+    private String source;
 
     @Relationship(type = "rel_title_paragraph", direction = Relationship.Direction.INCOMING)
     private List<RelKeyParagraph> relKeyParagraphs;
-
 
 }

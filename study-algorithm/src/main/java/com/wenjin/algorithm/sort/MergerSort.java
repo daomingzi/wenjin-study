@@ -1,7 +1,9 @@
 package com.wenjin.algorithm.sort;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -15,15 +17,18 @@ public class MergerSort {
 
 //        int[] data = {5, 7, 4, 3, 6, 8, 2, 1, 9};
 
-        int[] data = new int[800000];
+        int[] data = new int[10000];
         for (int i = 0; i < data.length; i++) {
             data[i] = random.nextInt();
         }
+//        System.out.println("排序前: " + Arrays.toString(data));
+
         int[] temp = new int[data.length];
         long start = System.currentTimeMillis();
         mergeSort(data, 0, data.length - 1, temp);
         long end = System.currentTimeMillis();
         System.out.println("耗时: " + (end - start));
+//        System.out.println("排序后: " + Arrays.toString(data));
 
 //        System.out.println(Arrays.toString(data));
 

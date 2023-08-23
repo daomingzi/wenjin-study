@@ -3,7 +3,7 @@ package com.wenjin.studyneo4j.coponent;
 
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +14,7 @@ import java.util.List;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Slf4j
-public class ArticleUploadComponentTest {
+public class ArticleVoUploadComponentTest {
 
     @Autowired
     private ArticleUploadComponent articleUploadComponent;
@@ -23,7 +23,7 @@ public class ArticleUploadComponentTest {
 
     static {
         filePaths = Lists.newArrayList(
-                "/Users/gavin/Documents/sunline/new220509/article8.txt"
+                "/Users/gavin/Documents/sunline/new220509/article6.txt"
         );
     }
 

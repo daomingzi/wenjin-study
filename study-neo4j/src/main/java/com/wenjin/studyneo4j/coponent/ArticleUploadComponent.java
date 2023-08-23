@@ -72,7 +72,7 @@ public class ArticleUploadComponent {
 
     private ArticleTitle buildArticleTitle(ArticleTitle articleTitle, String titleContent) {
         String now = DateUtil.now();
-        articleTitle.setEntityId("99a43ae4-64a8-4331-bcc8-0f83988fb104");
+//        articleTitle.setEntityId("");
 //        articleTitle.setEntityName("文章");
         articleTitle.setTitleContent(titleContent);
         articleTitle.setCreatTime(now);
